@@ -1,17 +1,23 @@
 import React from 'react'
 import { useState } from 'react'
+import { useCount } from '@/context/CountContext';
 
+
+// Below code was provided by ALX but has been modified to use CountContext
+// Modified because the header needs to access the count from context as well
+// const CounterApp: React.FC = () => {
+//     const [count, setCount] = useState(0);
+
+//     const increment = () => {
+//         setCount(count + 1);
+//     };
+
+
+//     const decrement = () => {
+//         setCount(count - 1)
+//     }
 const CounterApp: React.FC = () => {
-    const [count, setCount] = useState(0);
-
-    const increment = () => {
-        setCount(count + 1);
-    };
-
-
-    const decrement = () => {
-        setCount(count - 1)
-    }
+  const { count, increment, decrement } = useCount();
 
 
   return (
